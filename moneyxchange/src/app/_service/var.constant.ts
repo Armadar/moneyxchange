@@ -1,0 +1,1 @@
+export const ExchangeMicroService = 'http://localhost:56107';
