@@ -13,7 +13,6 @@ export class ExchangeService {
   constructor(private http: HttpClient) { }
 
   getExchange(exchange: Exchange) {
-    console.log(exchange.amount);
     return this.http.get<Exchange>(`${this.url}/${exchange.from}/${exchange.to}/${exchange.amount}`,
     {headers:null});
   }

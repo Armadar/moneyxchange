@@ -14,6 +14,7 @@ import { NgxCurrencyModule } from "ngx-currency";
 import { TwoDigitDecimaNumberDirective } from './_directive/decimaldirective';
 
 import { ExchangeService } from './_service/exchange.service';
+import { ExchangeMemory } from './_service/exchangeMemory';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ExchangeService } from './_service/exchange.service';
     HttpClientModule,
     NgxCurrencyModule    
   ],
-  providers: [ExchangeService],
+  providers: [ExchangeService,ExchangeMemory],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

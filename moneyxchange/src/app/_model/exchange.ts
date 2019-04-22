@@ -5,6 +5,8 @@ export class Exchange {
     dateRate: Date;
     amount: number;
     value: number;
+    operation:string;
+    rateDate:Date;
 
     constructor(from: string, to: string, amount: number) {
         this.from = from;
