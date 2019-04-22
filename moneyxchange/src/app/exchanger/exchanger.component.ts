@@ -4,6 +4,7 @@ import { FormGroup } from '@angular/forms';
 import { ExchangeService } from '../_service/exchange.service';
 import { Exchange } from '../_model/exchange';
 import { ExchangeMemory } from '../_service/exchangeMemory';
+import { LoginService } from '../_service/login.service';
 
 @Component({
   selector: 'app-exchanger',
@@ -15,7 +16,7 @@ export class ExchangerComponent implements OnInit {
   value: number;
   rate: number;
 
-  constructor(private exchangeService: ExchangeService, private exchangeMemory: ExchangeMemory) {
+  constructor(public loginService: LoginService,private exchangeService: ExchangeService, private exchangeMemory: ExchangeMemory) {
   }
 
   ngOnInit() {

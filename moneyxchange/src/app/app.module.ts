@@ -15,6 +15,11 @@ import { TwoDigitDecimaNumberDirective } from './_directive/decimaldirective';
 
 import { ExchangeService } from './_service/exchange.service';
 import { ExchangeMemory } from './_service/exchangeMemory';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './_service/login.service';
+import { LoginGuard } from './_service/login-guard.service';
+import { Security } from './_service/security';
+import { EncryptionHelper } from './_service/encryptionHelper';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,8 @@ import { ExchangeMemory } from './_service/exchangeMemory';
     ExchangerComponent,
     HeaderComponent,
     FooterComponent,
-    TwoDigitDecimaNumberDirective
+    TwoDigitDecimaNumberDirective,
+    LoginComponent
   ],
   imports: [
   BrowserModule,
@@ -32,7 +38,7 @@ import { ExchangeMemory } from './_service/exchangeMemory';
     HttpClientModule,
     NgxCurrencyModule    
   ],
-  providers: [ExchangeService,ExchangeMemory],
+  providers: [ExchangeService,ExchangeMemory,LoginService,LoginGuard,Security,EncryptionHelper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
