@@ -1,6 +1,8 @@
 <div class="container" style="height: 80vh">
 
-  <div class="row" style="height: 20vh"></div>
+  <div class="row" style="height: 20vh">
+      <h1 class="text-center">MoneyxChange</h1>
+  </div>
   <div class="row" style="background-color:beige;padding-top:40px;padding-bottom:40px">
 
     <form (ngSubmit)="calculate(f)" #f="ngForm">
@@ -9,7 +11,7 @@
           <div class="form-group">
             <div class="col-md-4"></div>            
             <div class="col-md-6">
-              <input placeholder="USD" ngModel type="text" id="amount" class="form-control" name="amount" currencyMask
+              <input required ngModel type="text" id="amount" class="form-control" name="amount" currencyMask
                 [options]="{ prefix: '$ ', thousands: ',', decimal: '.',align:'left',precision:'4' }" />
             </div>
           </div>
@@ -30,7 +32,7 @@
           <h5 class="text-center">Valor del Euro: {{rate}}</h5>
       </div>
       <div class="row">
-        <button type="submit" class="btn btn-primary center-block" style="width:200px">Calculate</button>
+        <button type="submit" class="btn btn-primary center-block" style="width:200px" [disabled]="f.invalid || f.value.amount===0">Calculate</button>
       </div>
     </form>
 
